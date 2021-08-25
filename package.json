@@ -1,0 +1,17 @@
+{
+  "name": "resfull-api",
+  "version": "0.0.1",
+  "description": "Ceartion de ma premiere et simple API REST avec node js graphikart",
+  "main": "server.js",
+  "scripts": {
+    "start": " nodemon server.js",
+    "test": "npm test"
+  },
+  "author": "WIBR",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.1.3"
+  }
+}
