@@ -1,13 +1,15 @@
-const http = require('http')
+const app = require('express')();
+const server = require('http').Server(app); 
+const io = require('socket.io')(server);
 
-http.createServer((req, resp) => {
-
-    resp.writeHead(200, 'utf-8',{
-        'Content-Type': 'text/html',
-        'Content-Length': 300
-    });
-
-    resp.end('Je suis dans la place')
-}).listen(3000, ()=>{
-    console.log('Server start at port 3000');
+app.get('/',(req, resp)=>{
+    resp.sendFile(`${__dirname}/index.html`);
 })
+
+io.on('connection', function (socket){ 
+    console.log('Je suis connecte');
+ });
+
+server.listen(3000, ()=>{
+    console.log('Server started');
+});
